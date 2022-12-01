@@ -1,0 +1,45 @@
+.display-none {
+    display: none!important;
+}
+
+.display-flex {
+    display: flex!important;
+}
+
+.display-block {
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    /* doit faire calc car 100px de header + 2px de border */
+    height: calc(100% - 102px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.30);
+}
+
+.modal {
+    z-index: 10;
+    position: absolute;
+    top: 36%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(179,196,132,1) 0%, rgba(255,255,255,1) 100%);
+    width: 500px;
+    height: 50px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.modal_text {
+    margin-left: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+
+.close_modal {
+    position: relative;
+    left: 50%;
+    margin-bottom: 50px;
+}

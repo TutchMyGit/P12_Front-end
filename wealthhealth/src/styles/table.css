@@ -1,0 +1,63 @@
+table {
+  margin: 25px 0 10px 0;
+  width: 75%;
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: rgb(0, 0, 0);
+}
+
+th {
+  text-align: left;
+}
+
+thead th {
+  background-color: #b3c484;
+}
+
+tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+tbody td:hover:before {
+  position: relative;
+}
+tbody td:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -9999px;
+  bottom: -9999px;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: -1;
+}
+
+.pagination {
+    width: 75%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+}
+
+.go_to_page {
+    margin-right: 10px;
+}
+
+.select_rows_displayed {
+    margin: 0;
+    width: 90px;
+}
+
+.buttons_container {
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+}

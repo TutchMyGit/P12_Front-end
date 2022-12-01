@@ -1,0 +1,52 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 20%;
+    min-width: 350px;
+    max-width: 600px;
+    height: auto;
+    min-height: 600px;
+    font-size: 1.2em;
+}
+
+.form input {
+    width: 100%;
+    border: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    font-size: 1em;
+}
+
+.form input:focus {
+    outline: none;
+}
+
+.form select {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    font-size: 1.1em;
+}
+
+.form fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+}
+
+.form fieldset input, select {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.submit {
+    margin-top: 10px;
+}
+
+.alert {
+    margin: 0 0 0 5px;
+    font-size: 0.8em;
+    color: rgb(192, 0, 0);
+}

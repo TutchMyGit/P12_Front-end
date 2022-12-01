@@ -1,0 +1,19 @@
+.search {
+    width: auto;
+    height: 30px;
+    margin-top: 50px;
+}
+
+.search label {
+    font-size: 1.3em;
+}
+
+.search input {
+    height: 100%;
+    width: 200px;
+    border-radius: 15px;
+    padding-left: 10px;
+    margin-left: 5px;
+    font-size: 0.7em;
+}
+
