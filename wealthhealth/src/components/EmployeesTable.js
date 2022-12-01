@@ -10,10 +10,20 @@ import { COLUMNS } from "./Columns";
 import { Search } from "./Search";
 import "../styles/table.css";
 
-function TestTable() {
+function EmployeesTable() {
   const [data, setData] = useState(employeesDataMock);
 
   console.log(data);
+
+  // const employeesData = useSelector((state) => state.employee.employeesData)
+
+  // useEffect(() => {
+  //   const setupData = async () => {
+  //     await setData(employeesData);
+  //   };
+  //   setupData()
+  //   .catch(console.error)
+  // }, [employeesData]);
 
   const columns = useMemo(() => COLUMNS, []);
 
@@ -149,4 +159,4 @@ function TestTable() {
   );
 }
 
-export default TestTable;
+export default EmployeesTable;

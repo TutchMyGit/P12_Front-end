@@ -1,15 +1,13 @@
 import React from 'react';
-import EmployeeTable from '../components/EmployeeTable';
-import TestTable from '../components/TestTable';
+import EmployeesTable from '../components/EmployeesTable';
 import Header from '../components/Header';
-import Search from '../components/Search';
 
 function EmployeesList() {
     return (
       <React.Fragment>
         <Header />
         <div className='container'>
-          <TestTable />
+          <EmployeesTable />
         </div>
       </React.Fragment>
     );
