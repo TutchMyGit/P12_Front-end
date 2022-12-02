@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAsyncDebounce } from "react-table";
-import '../styles/search.css';
+import '../../styles/search.css';
 
 export function Search({preGlobalFilteredRows, globalFilter, setGlobalFilter}) {
 

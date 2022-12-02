@@ -5,25 +5,24 @@ import {
   useTable,
   usePagination,
 } from "react-table";
-import { employeesDataMock } from "../data/employees";
+import { useSelector } from "react-redux";
 import { COLUMNS } from "./Columns";
 import { Search } from "./Search";
-import "../styles/table.css";
+import "../../styles/table.css";
 
 function EmployeesTable() {
-  const [data, setData] = useState(employeesDataMock);
+  const [data, setData] = useState([]);
 
   console.log(data);
 
-  // const employeesData = useSelector((state) => state.employee.employeesData)
+  const employeesData = useSelector((state) => state.employee.employeesData);
 
-  // useEffect(() => {
-  //   const setupData = async () => {
-  //     await setData(employeesData);
-  //   };
-  //   setupData()
-  //   .catch(console.error)
-  // }, [employeesData]);
+  useEffect(() => {
+    const setupData = async () => {
+      await setData(employeesData);
+    };
+    setupData().catch(console.error);
+  }, [employeesData]);
 
   const columns = useMemo(() => COLUMNS, []);
 
@@ -113,16 +112,16 @@ function EmployeesTable() {
             />
           </span>
           <select
-          className="select_rows_displayed"
-          value={pageSize}
-          onChange={(e) => setPageSize(Number(e.target.value))}
-        >
-          {[10, 25, 50, 100].map((pageSize) => (
-            <option key={pageSize} value={pageSize}>
-              Show {pageSize}
-            </option>
-          ))}
-        </select>
+            className="select_rows_displayed"
+            value={pageSize}
+            onChange={(e) => setPageSize(Number(e.target.value))}
+          >
+            {[10, 25, 50, 100].map((pageSize) => (
+              <option key={pageSize} value={pageSize}>
+                Show {pageSize}
+              </option>
+            ))}
+          </select>
         </div>
         <div className="buttons_container">
           <button

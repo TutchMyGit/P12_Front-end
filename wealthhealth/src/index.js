@@ -7,7 +7,6 @@ import "./styles/index.css";
 
 import Home from "./pages/Home";
 import EmployeesList from "./pages/Employees-List";
-import Sort from "./components/Sort";
 import store from "./app/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -19,7 +18,6 @@ root.render(
           <Route exact path="/" element={<Home />}></Route>
           <Route
             path="Employees-List"
-            component={Sort}
             element={<EmployeesList />}
           ></Route>
         </Routes>

@@ -1,5 +1,5 @@
 import React from 'react';
-import EmployeesTable from '../components/EmployeesTable';
+import EmployeesTable from '../components/table/EmployeesTable';
 import Header from '../components/Header';
 
 function EmployeesList() {

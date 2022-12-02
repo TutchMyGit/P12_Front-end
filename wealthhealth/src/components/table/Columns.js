@@ -33,6 +33,6 @@ export const COLUMNS = [
     },
     {
         Header: 'Zip Code',
-        accessor: 'zipCode'
+        accessor: 'zipcode'
     },
 ]

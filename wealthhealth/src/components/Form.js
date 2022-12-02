@@ -5,7 +5,6 @@ import { useForm } from "react-hook-form";
 
 import "../styles/form.css";
 import { saveEmployee, setEmployee, setModalBoolean } from "../app/slices";
-import { useState } from "react";
 
 function Form() {
   const {
@@ -19,7 +18,7 @@ function Form() {
     console.table(data);
     await dispatch(setEmployee(data));
     await dispatch(saveEmployee(data));
-    await dispatch(setModalBoolean(true))
+    await dispatch(setModalBoolean(true));
   };
 
   const departments = [
@@ -40,11 +39,22 @@ function Form() {
     },
   ];
 
+  const handleOnBlurType = (e) => {
+    console.log("blur");
+    e.target.type = "text";
+  };
+
+  const handleOnFocusType = (e) => {
+    console.log("focus");
+    e.target.type = "date";
+  };
+
   return (
     <form className="form" onSubmit={handleSubmit(onSubmit)}>
       <fieldset className="employee_personnal">
         <legend>Employee</legend>
         <input
+          type="text"
           placeholder="First name"
           {...register("firstName", { required: true })}
           aria-invalid={errors.firstName ? "true" : "false"}
@@ -55,6 +65,7 @@ function Form() {
           </p>
         )}
         <input
+          type="text"
           placeholder="Last name"
           {...register("lastName", { required: true })}
           aria-invalid={errors.lastName ? "true" : "false"}
@@ -65,6 +76,9 @@ function Form() {
           </p>
         )}
         <input
+          type="text"
+          onFocus={handleOnFocusType}
+          onBlur={handleOnBlurType}
           placeholder="Date of birth"
           {...register("dateOfBirth", { required: true })}
           aria-invalid={errors.dateOfBirth ? "true" : "false"}
@@ -75,6 +89,8 @@ function Form() {
           </p>
         )}
         <input
+          type="text"
+          onFocus={(e) => (e.target.type = "date")}
           placeholder="Start date"
           {...register("startDate", { required: true })}
           aria-invalid={errors.startDate ? "true" : "false"}
@@ -89,6 +105,7 @@ function Form() {
       <fieldset className="address">
         <legend>Address</legend>
         <input
+          type="text"
           placeholder="Street"
           {...register("street", { required: true })}
           aria-invalid={errors.street ? "true" : "false"}
@@ -99,6 +116,7 @@ function Form() {
           </p>
         )}
         <input
+          type="text"
           placeholder="City"
           {...register("city", { required: true })}
           aria-invalid={errors.city ? "true" : "false"}
@@ -120,6 +138,7 @@ function Form() {
           ))}
         </select>
         <input
+          type="number"
           placeholder="Zipcode"
           {...register("zipcode", { required: true })}
           aria-invalid={errors.zipcode ? "true" : "false"}
