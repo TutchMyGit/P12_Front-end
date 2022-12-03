@@ -6,6 +6,8 @@ export function Search({preGlobalFilteredRows, globalFilter, setGlobalFilter}) {
 
     const count = preGlobalFilteredRows.length;
     const [value, setValue] = useState(globalFilter);
+
+    // put 300 delay for better user's experience
     const onChange = useAsyncDebounce((value) => {
         setGlobalFilter(value || undefined);
     }, 300);

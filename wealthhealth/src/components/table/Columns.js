@@ -1,3 +1,11 @@
+/**
+ * tip :
+ * 
+ * * If you wish to change table's headers names, change each Header's content as you want
+ * ! Do not change accesor since table will lose access to those specific named data
+ * 
+ */
+
 export const COLUMNS = [
     {
         Header: 'First Name',

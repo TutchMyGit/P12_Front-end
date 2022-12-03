@@ -1,3 +1,5 @@
+// Used by the form for US States choices
+
 export const states = [
     {
         "name": "Alabama",

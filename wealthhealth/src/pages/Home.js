@@ -13,7 +13,6 @@ function Home() {
   const isModalOn = useSelector((state) => state.employee.isModalOn);
   const dispatch = useDispatch()
 
-
   const closeModal = () => {
     dispatch(setModalBoolean(false))
   }

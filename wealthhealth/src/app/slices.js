@@ -19,6 +19,7 @@ export const employeeSlice = createSlice({
     name: 'employee',
     initialState,
     reducers: {
+        // Save input from form for creating employee
         setEmployee: (state, action) => {
             state.employee.firstName = action.payload.firstName;
             state.employee.lastName = action.payload.lastName;
@@ -29,12 +30,14 @@ export const employeeSlice = createSlice({
             state.employee.state = action.payload.state;
             state.employee.zipcode = action.payload.zipcode;
         },
+        // Save setEmployee's array by putting it in a list. 
         saveEmployee: (state, action) => {
             return {
                 ...state,
                 employeesData: [...state.employeesData, action.payload]
             }
         },
+        // Change boolean for Modal display
         setModalBoolean: (state, action) => {
             state.isModalOn = action.payload
         }

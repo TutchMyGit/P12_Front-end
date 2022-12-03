@@ -10,11 +10,13 @@ import { COLUMNS } from "./Columns";
 import { Search } from "./Search";
 import "../../styles/table.css";
 
+import { employeesDataMock } from "../../data/employeesDataMock";
+
 function EmployeesTable() {
+  // If you need table with a large data content, change useState([]) by useState(employeesDataMock) and delete/comment the useEffect"
   const [data, setData] = useState([]);
 
-  console.log(data);
-
+  // Get employeesdata from state then pushed into var data by setData
   const employeesData = useSelector((state) => state.employee.employeesData);
 
   useEffect(() => {
@@ -26,6 +28,7 @@ function EmployeesTable() {
 
   const columns = useMemo(() => COLUMNS, []);
 
+  // Do not touch, used for search function
   const tableInstance = useTable(
     { columns, data },
     useGlobalFilter,
@@ -33,6 +36,7 @@ function EmployeesTable() {
     usePagination
   );
 
+  // Do not touch, used for everything in the table (pagination, filter, display)
   const {
     getTableProps,
     getTableBodyProps,
